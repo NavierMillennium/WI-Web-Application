@@ -48,6 +48,13 @@ main {
     margin-bottom: 20px;
 }
 
+.main-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .info {
     width: 100%;
     height: 500px;
@@ -92,6 +99,14 @@ main {
     font-weight: bold;
     color: white;
     background: linear-gradient(to right, rgb(219, 39, 119), rgb(147, 51, 234));
+}
+
+.video-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 .announcements-container {
     max-width: 256px;
@@ -468,10 +483,10 @@ input::placeholder {
 
 .site-footer {
     border-top: 1px solid rgba(51, 65, 85, 0.5);
-    background: #0f172a;
     padding: 40px 20px;
     color: #cbd5e1;
     font-size: 14px;
+    background-color: #111827f2;
 }
 
 .footer-container {
@@ -483,7 +498,6 @@ input::placeholder {
     max-width: var(--default-max-width);
     margin: auto;
     gap: 30px;
-    background-color: #111827f2;
 }
 
 .footer-section1 h3 {
@@ -541,6 +555,9 @@ input::placeholder {
         display: none;
     }
     .nav-links {
+        display: none;
+    }
+    .video-container {
         display: none;
     }
 }
