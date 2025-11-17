@@ -66,11 +66,13 @@
                     </p>
 
                     <label for="surname" class="required">Surname</label>
-                    <input id="surname" name="surname" placeholder="Surname" autocomplete="login" required>
+                    <input id="surname" name="surname" placeholder="Surname" autocomplete="login" required maxlength="100">
                     <label for="email" class="required">Email</label>
-                    <input id="email" name="email" placeholder="Your email" autocomplete="email" required>
+                    <input id="email" name="email" placeholder="Your email" autocomplete="email" required maxlength="100">
                     <div id="email-err"></div>
-
+                    
+                    <label for="email" class="required">Subject</label>
+                    <input id="email" name="email" placeholder="Message Subject" autocomplete="email" required  maxlength="300">
                     <label for="message" class="required">Message</label>
                     <textarea id="message" name="message" rows="5" placeholder="Your message" required
                         maxlength="200"></textarea>
