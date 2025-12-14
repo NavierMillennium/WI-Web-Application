@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ćwiczenie 2</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <div class="container">
+        <form>
+            <label for="min-len">Minimalna długość hasła</label>
+            <input id="min-len" name="min-len" placeholder="min-length" type="number" required>
+
+            <label for="max-len">Maksymalna długość hasła</label>
+            <input id="max-len" name="max-len" placeholder="max-length" type="number" required>
+
+            <label for="uppercase">Wielkie litery</label>
+            <input type="checkbox" id="uppercase" name="uppercase"/>
+
+            <label for="special-char">Znaki specjalne</label>
+            <input type="checkbox" id="special-char" name="special-char"/>
+
+            <button type="submit" id="btn-gen">Wygeneruj hasło</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>

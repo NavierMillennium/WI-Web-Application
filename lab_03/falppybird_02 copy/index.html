@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flappy Bird</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .background {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            max-width: 800px;
+            max-height: 520px;
+            min-width: 800px;
+            min-height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+            overflow: hidden;
+            position: relative;
+        }
+
+        canvas {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            background: black;
+            image-rendering: pixelated;
+        }
+
+
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            font-size: 24px;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        #gameOver,
+        #startGame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-family: sans-serif;
+            display: none;
+        }
+
+
+        #gameOver button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+
+        .gameover-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #end-game {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .summary {
+            position: absolute;
+            left: 50%;
+            width: 300px;
+            height: 210px;
+            display: flex;
+            flex-direction: column;
+            background: rgba(0, 100, 50, 0.7);
+            border: solid black;
+            border-width: 1px 3px 8px 3px;
+            border-radius: 2px;
+            box-shadow: inset 0 0 0 10px rgba(1, 14, 12, 0.3);
+            padding: 20px;
+            color: #20201f;
+        }
+
+        .scoreboard {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .result-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .scoreboard h2 {
+            margin: 0 0 0 0;
+            font-size: 14px;
+        }
+
+        .medal-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .scoreboard .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 2px;
+            margin-bottom: 10px;
+        }
+
+        .medal {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+
+        .score {
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px 0 #000;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+        }
+
+        .button button {
+            background: linear-gradient(to bottom, rgba(35, 133, 35, 0.8), rgba(0, 100, 50, 0.7));
+            border: 2px solid rgba(0, 80, 40, 0.9);
+            border-radius: 2px;
+            padding: 10px 24px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px rgba(0, 80, 40, 0.6), 0 8px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.1s ease-in-out;
+        }
+
+        .button button:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px #060a09, 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="container" id="container">
+            <canvas id="gameCanvas"></canvas>
+            <div id="startGame">
+                <img src="assets/UI/message.png">
+            </div>
+            <div id="end-game">
+                <img src="assets/UI/gameover.png">
+            </div>
+
+            <div class="summary" id="gameOver"> 
+                <div class="scoreboard">
+                    <div class="medal-container">
+                        <h2>MEDAL</h2>
+                        <div class="medal" id="score-medal">
+                        </div>
+                    </div>
+                    <div class="result-container">
+                        <h2>SCORE</h2>
+                        <div class="row">
+                            <div class="score" id="player-score">12</div>
+                        </div>
+                        <h2>LAST SCORE</h2>
+                        <div class="row">
+                            <div class="score" id="last-score">12</div>
+                        </div>
+                        <h2>HIGH SCORE</h2>
+                        <div class="row">
+                            <div class="score" id="best-score">12</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button">
+                    <button id="restartBtn">New Game</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

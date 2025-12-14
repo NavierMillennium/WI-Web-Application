@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ćwiczenie 2</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <label for="filter" class="required">Wyszukaj:</label>
+        <input id="filter" name="filter" placeholder="phrase" type="text" required>
+
+        <label for="sort">Sort:</label>
+        <select name="sort" id="sort">
+            <option value="asc">Rosnąco</option>
+            <option value="desc">Malejąco</option>
+            <option value="origin">Orginalna kolejność</option>
+        </select>
+
+        <div class="products-container">
+            <table id="products-tabel" border="1">
+                <thead>
+                    <tr>
+                        <th>Tytuł</th>
+                        <th>Opis</th>
+                        <th>Zdjęcie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- products data -->
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>

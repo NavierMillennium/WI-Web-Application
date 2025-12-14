@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flappy Bird</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+        }
+        .background {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            max-width: 800px;
+            max-height: 520px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+            /* tło kontenera */
+            overflow: hidden;
+            position: relative;
+            /* aby #score i overlay działały absolutnie */
+        }
+
+        canvas {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            background: black;
+            /* dodatkowe czarne tło canvas */
+            image-rendering: pixelated;
+        }
+
+
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            font-size: 24px;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        #gameOver,
+        #startGame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-family: sans-serif;
+            display: none;
+        }
+
+
+        #gameOver button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="container" id="container">
+            <canvas id="gameCanvas"></canvas>
+            <div id="startGame">
+                <img src="assets/UI/message.png ">
+            </div>
+            <div id="gameOver">
+                <img src="assets/UI/gameover.png">
+                <p id="lastScore">Wynik: 0</p>
+                <p id="bestScores">Najlepsze wyniki:</p>
+                <button id="restartBtn">Zagraj ponownie</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
